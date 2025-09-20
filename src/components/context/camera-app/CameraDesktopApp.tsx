@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import { useCamera } from "../../libs/hooks/use-camera";
+import { useCamera } from "../../../libs/hooks/use-camera";
 
 const CameraApp: React.FC = () => {
   const {

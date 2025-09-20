@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import React, { useEffect } from "react";
-import { useCamera } from "../../libs/hooks/use-camera";
+import { useCamera } from "../../../libs/hooks/use-camera";
 
 const CameraMobileApp: React.FC = () => {
   const {
