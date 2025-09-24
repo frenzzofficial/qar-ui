@@ -5,8 +5,9 @@ import React, { useEffect, useState } from "react";
 import { useBreakpoint } from "@/libs/hooks/use-breakpoints";
 
 const CameraApp: React.FC = () => {
-  const { isMobile } = useBreakpoint();
   const [hydrated, setHydrated] = useState(false);
+  const { isMobile, isTablet } = useBreakpoint();
+  const isResponsive = isMobile || isTablet;
 
   useEffect(() => {
     // Prevent mismatch between SSR and client
@@ -15,7 +16,7 @@ const CameraApp: React.FC = () => {
 
   if (!hydrated) return null;
 
-  return isMobile ? <CameraMobileApp /> : <CameraDesktopApp />;
+  return isResponsive ? <CameraMobileApp /> : <CameraDesktopApp />;
 };
 
 export default CameraApp;
